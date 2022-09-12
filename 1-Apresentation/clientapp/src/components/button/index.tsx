@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from './styled';
+import { ButtonStyled } from './styled';
 
 interface Props {
   text?: string;
@@ -9,7 +9,7 @@ interface Props {
 
 export default function ButtonComponent(props: Props): JSX.Element {
   const { width, height, text } = props;
-  return <Button> {text} </Button>;
+  return <ButtonStyled loading />;
 }
 
 ButtonComponent.defaultProps = { text: '', height: '48px', width: '120px' };

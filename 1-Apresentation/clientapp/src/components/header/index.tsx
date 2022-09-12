@@ -1,13 +1,16 @@
 import React from 'react';
-import * as Global from '../styles';
+import * as G from '../styles';
 import { Container } from './styled';
-import Button from '../button';
+import { logo } from '../../assets/images';
+import ButtonComponent from '../button';
 
 export default function Header(): JSX.Element {
   return (
     <Container>
-      <Global.TextCommon> Opaaaaaaaa </Global.TextCommon>
-      <Button height="12px" width="150px" />
+      <img src={logo} alt="logo" />
+      <G.InputCommon style={{ backgroundImage: logo.toString() }} />
+      <G.TextCommon color="#ffffff"> Opaaaaaaaa </G.TextCommon>
+      <ButtonComponent />
     </Container>
   );
 }

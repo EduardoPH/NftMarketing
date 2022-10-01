@@ -19,7 +19,11 @@
     },
     "plugins": ["react", "react-hooks", "@typescript-eslint", "prettier"],
     "rules": {
+      "react/prop-types": "off",
+      "no-shadow": "off",
+      "@typescript-eslint/no-shadow": ["error"],
       "prettier/prettier": "error",
+      "max-classes-per-file": "off",
       "react/jsx-one-expression-per-line": "off",
       "react-hooks/rules-of-hooks": "error",
       "react-hooks/exhaustive-deps": "warn",
@@ -30,6 +34,7 @@
         }
       ],
       "import/prefer-default-export": "off",
+      "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
       "@typescript-eslint/explicit-function-return-type": [
         "error",
         {

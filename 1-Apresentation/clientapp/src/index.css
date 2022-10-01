@@ -1,8 +1,19 @@
-body {
+body, * {
   margin: 0;
   padding: 0;
-  background-color: blue;
+  font-size: 14px;
 }
 
+.App {
+  background-image: url('./assets/images/backgroundGradients.png');
+  background-size: cover;
+}
 
+.carousel-container {
+  position: relative;
+  width: 100%;
+  height: 32em;
+  display: flex;
+  justify-content: space-between;
+}
 

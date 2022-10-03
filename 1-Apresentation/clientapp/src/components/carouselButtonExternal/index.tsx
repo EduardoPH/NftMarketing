@@ -13,6 +13,7 @@ export default function CarouselButtonExternal({
   next,
   title,
   carouselState,
+  goToSlide,
 }: CarouselButtonGroupProps): JSX.Element {
   const totalItems = carouselState?.totalItems ?? 0;
   return (
@@ -41,7 +42,7 @@ export default function CarouselButtonExternal({
           />
         )}
 
-        {carouselState?.currentSlide === totalItems - 4 ? (
+        {carouselState?.currentSlide === totalItems - 4 || totalItems < 5 ? (
           <ButtonComponent
             height="64px"
             width="64px"

@@ -1,12 +1,13 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import { nft, nft2 } from '../../assets/images';
+import { shuffle, auctions } from './response';
 import CarouselButtonExternal from '../../components/carouselButtonExternal';
-import UserCentered from '../../components/userCentered';
 import BoxAuctions from '../../components/boxAuctions';
 
 import { ContainerTwo } from './styled';
+import ButtonComponent from '../../components/button';
 
 export default function Two(): JSX.Element {
   const responsive = {
@@ -35,54 +36,79 @@ export default function Two(): JSX.Element {
     },
   };
 
+  const [viewMore, setViewMore] = useState(false);
+  const [response] = useState(shuffle(auctions));
   return (
-    <ContainerTwo style={{ display: 'flex', flexDirection: 'column-reverse' }}>
-      <Carousel
-        responsive={responsive}
-        showDots={false}
-        arrows={false}
-        containerClass="carousel-container"
-        renderButtonGroupOutside
-        customButtonGroup={<CarouselButtonExternal title="Live auctions" />}
+    <ContainerTwo>
+      {!viewMore ? (
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'column-reverse',
+          }}
+        >
+          <Carousel
+            responsive={responsive}
+            showDots={false}
+            arrows={false}
+            containerClass="carousel-container"
+            renderButtonGroupOutside
+            customButtonGroup={<CarouselButtonExternal title="Live auctions" />}
+          >
+            {response.map((i, index) => (
+              <BoxAuctions
+                bid={i.bid}
+                dataExpire="12 Days 7hrs"
+                imageBanner={i.imageBanner}
+                imageProfile={i.imageProfile}
+                likes={i.likes}
+                userName={i.userName}
+              />
+            ))}
+          </Carousel>
+        </div>
+      ) : (
+        <div
+          className="auctions-container"
+          style={{
+            display: 'flex',
+            flexDirection: 'row',
+            flexWrap: 'wrap',
+            margin: 'auto',
+            justifyContent: 'space-between',
+          }}
+        >
+          {response.map((i, index) => (
+            <BoxAuctions
+              bid={i.bid}
+              dataExpire="12 Days 7hrs"
+              imageBanner={i.imageBanner}
+              imageProfile={i.imageProfile}
+              likes={i.likes}
+              userName={i.userName}
+            />
+          ))}
+        </div>
+      )}
+      <div
+        style={{
+          display: 'flex',
+          width: '100%',
+          justifyContent: 'center',
+          margin: '3em 0',
+        }}
       >
-        <BoxAuctions />
-
-        <UserCentered
-          imageBanner={nft2}
-          imageProfile={nft2}
-          price="2.0000000000"
-          userName="EduPH"
+        <ButtonComponent
+          type={3}
+          onClickAction={() => setViewMore(!viewMore)}
+          color="#747681"
+          borderColor="#747681"
+          text={viewMore ? 'View Less' : 'View More'}
+          width="185px"
+          height="64px"
+          radius="36px"
         />
-
-        <BoxAuctions />
-
-        <UserCentered
-          imageBanner={nft2}
-          imageProfile={nft2}
-          price="2.0000000000"
-          userName="EduPH"
-        />
-
-        <BoxAuctions />
-
-        <UserCentered
-          imageBanner={nft2}
-          imageProfile={nft2}
-          price="2.0000000000"
-          userName="EduPH"
-        />
-
-        <BoxAuctions />
-
-        <UserCentered
-          imageBanner={nft2}
-          imageProfile={nft2}
-          price="2.0000000000"
-          userName="EduPH"
-        />
-
-        <BoxAuctions />
-      </Carousel>
+      </div>
     </ContainerTwo>
   );
 }

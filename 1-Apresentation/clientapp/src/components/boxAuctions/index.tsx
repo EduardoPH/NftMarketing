@@ -3,18 +3,31 @@ import * as G from '../styles/index';
 import { nft, nft2 } from '../../assets/images';
 import { Container } from './styled';
 import ButtonComponent from '../button';
+import HeartIcon from '../heartIcon';
 
 interface Props {
   imageBanner: string;
   imageProfile: string;
   userName: string;
-  price: string;
+  bid: {
+    price: number;
+    codeCoin: string;
+  };
+  likes: number;
+  dataExpire: string;
 }
 
-export default function BoxAuctions(): JSX.Element {
+export default function BoxAuctions({
+  imageBanner,
+  bid,
+  dataExpire,
+  imageProfile,
+  likes,
+  userName,
+}: Props): JSX.Element {
   return (
     <Container>
-      <img src={nft} alt="images" className="image-banner-user" />
+      <img src={imageBanner} alt="images" className="image-banner-user" />
       <div className="user-box">
         <div className="button-art">
           <ButtonComponent
@@ -29,9 +42,9 @@ export default function BoxAuctions(): JSX.Element {
           <div className="box-user">
             <div className="part-one">
               <div className="image-profile-user">
-                <img src={nft2} alt="" />
+                <img src={imageProfile} alt="" />
                 <G.TextCommon color="#04091E" style={{ fontWeight: 600 }}>
-                  User Artists
+                  {userName}
                 </G.TextCommon>
               </div>
             </div>
@@ -41,7 +54,7 @@ export default function BoxAuctions(): JSX.Element {
                   color="linear-gradient(95.49deg, #FCAD02 -36.87%, #FF0041 98.63%)"
                   style={{ fontSize: 12 }}
                 >
-                  12 Days 7hrs
+                  {dataExpire}
                 </G.TextCommon>
                 <G.TextCommon
                   color="#000"
@@ -67,11 +80,17 @@ export default function BoxAuctions(): JSX.Element {
           </G.TextCommon>
           <div className="box-infos">
             <G.TextCommon
-              style={{ fontWeight: 500, fontSize: 14, marginTop: 13 }}
+              style={{ fontWeight: 500, fontSize: 14 }}
               className="price"
             >
-              1.05 ETH
+              {bid.price} {bid.codeCoin}
             </G.TextCommon>
+            <HeartIcon
+              onClickAction={() => console.log(true)}
+              onClickActionReverse={() => console.log(false)}
+              state={false}
+              likes={likes}
+            />
           </div>
         </div>
       </div>

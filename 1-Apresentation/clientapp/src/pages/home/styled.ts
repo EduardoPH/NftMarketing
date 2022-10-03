@@ -46,7 +46,7 @@ const ContainerOne = styled.div`
 
 const ContainerTwo = styled.div`
   width: 79%;
-  margin: auto;
+  margin: 2.5em auto 10em;
 `;
 
 export { ContainerOne, ContainerTwo };

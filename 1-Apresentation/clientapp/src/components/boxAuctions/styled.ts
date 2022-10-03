@@ -4,8 +4,9 @@ const Container = styled.div`
   width: 320px;
   height: 425px;
   border: solid 1px #cdd6d7;
-  img {
-    max-width: 100%;
+  margin-top: 2em;
+  .image-banner-user {
+    width: 100%;
     height: 230px;
     object-fit: cover;
   }
@@ -29,6 +30,7 @@ const Container = styled.div`
         width: 32px;
         height: 32px;
         border-radius: 24px;
+        object-fit: cover;
       }
     }
   }
@@ -54,6 +56,14 @@ const Container = styled.div`
     align-items: center;
     justify-content: space-between;
     width: 100%;
+  }
+
+  .box-infos {
+    margin-top: 13px;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
   }
 `;
 

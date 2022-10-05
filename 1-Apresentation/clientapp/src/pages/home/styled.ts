@@ -47,6 +47,36 @@ const ContainerOne = styled.div`
 const ContainerTwo = styled.div`
   width: 79%;
   margin: 2.5em auto 10em;
+  transition: all 2s;
+  @keyframes go-back {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  .carousel-container {
+    animation: go-back 1s;
+  }
+  .auctions-container {
+    animation: go-back 1s;
+    .container-box-auctions {
+      margin-top: 2em;
+    }
+  }
 `;
 
-export { ContainerOne, ContainerTwo };
+const ContainerThree = styled.div`
+  margin: 5em auto;
+  width: 79%;
+
+  .header-topcollection {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+`;
+
+export { ContainerOne, ContainerTwo, ContainerThree };

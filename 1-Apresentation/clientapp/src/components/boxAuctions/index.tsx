@@ -1,6 +1,5 @@
 import React from 'react';
 import * as G from '../styles/index';
-import { nft, nft2 } from '../../assets/images';
 import { Container } from './styled';
 import ButtonComponent from '../button';
 import HeartIcon from '../heartIcon';
@@ -26,7 +25,7 @@ export default function BoxAuctions({
   userName,
 }: Props): JSX.Element {
   return (
-    <Container>
+    <Container className="container-box-auctions">
       <img src={imageBanner} alt="images" className="image-banner-user" />
       <div className="user-box">
         <div className="button-art">

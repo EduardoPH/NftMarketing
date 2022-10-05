@@ -1,8 +1,7 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import { nft, nft2 } from '../../assets/images';
-import { shuffle, auctions } from './response';
+import { auctions } from './response';
 import CarouselButtonExternal from '../../components/carouselButtonExternal';
 import BoxAuctions from '../../components/boxAuctions';
 
@@ -37,7 +36,7 @@ export default function Two(): JSX.Element {
   };
 
   const [viewMore, setViewMore] = useState(false);
-  const [response] = useState(shuffle(auctions));
+  const [response] = useState(auctions);
   return (
     <ContainerTwo>
       {!viewMore ? (

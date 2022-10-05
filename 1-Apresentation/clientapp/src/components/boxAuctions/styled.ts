@@ -4,7 +4,6 @@ const Container = styled.div`
   width: 320px;
   height: 425px;
   border: solid 1px #cdd6d7;
-  margin-top: 2em;
   .image-banner-user {
     width: 100%;
     height: 230px;

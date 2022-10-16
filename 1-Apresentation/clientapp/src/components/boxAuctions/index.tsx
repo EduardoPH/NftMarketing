@@ -42,8 +42,13 @@ export default function BoxAuctions({
             <div className="part-one">
               <div className="image-profile-user">
                 <img src={imageProfile} alt="" />
-                <G.TextCommon color="#04091E" style={{ fontWeight: 600 }}>
-                  {userName}
+                <G.TextCommon
+                  color="#04091E"
+                  style={{ fontWeight: 600, marginLeft: 10 }}
+                >
+                  {userName.length >= 10
+                    ? `${userName.substring(0, 10)}...`
+                    : userName}
                 </G.TextCommon>
               </div>
             </div>

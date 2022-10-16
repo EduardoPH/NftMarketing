@@ -5,6 +5,7 @@ import heartOn from './heartOn.svg';
 import heartOff from './heartOff.svg';
 import ArrowDown from './arrow-down.svg';
 import ArrowUp from './arrow-up.svg';
+import Verify from './verify.svg';
 
 export {
   googleTag,
@@ -14,4 +15,5 @@ export {
   heartOn,
   ArrowDown,
   ArrowUp,
+  Verify,
 };

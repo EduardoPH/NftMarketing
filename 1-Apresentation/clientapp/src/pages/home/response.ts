@@ -2,7 +2,7 @@ import { nft2, nft } from '../../assets/images';
 
 export const auctions = [
   {
-    userName: 'EduPH',
+    userName: 'EduPHsdfnnvbnbvn',
     imageBanner: nft,
     imageProfile: nft2,
     likes: 2354,

@@ -1,6 +1,7 @@
 import React from 'react';
 import SelectCustom from '../../components/selectCustom';
 import * as G from '../../components/styles';
+import TopCollection from '../../components/topCollection';
 import { ContainerThree } from './styled';
 
 export default function Three(): JSX.Element {
@@ -16,6 +17,9 @@ export default function Three(): JSX.Element {
           Top collection
         </G.TextTittle>
         <SelectCustom />
+      </div>
+      <div>
+        <TopCollection position={1} />
       </div>
     </ContainerThree>
   );

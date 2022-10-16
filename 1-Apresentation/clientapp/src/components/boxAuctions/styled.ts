@@ -19,7 +19,7 @@ const Container = styled.div`
     padding: 1.5em;
   }
   .part-one {
-    width: 43%;
+    width: 30%;
     .image-profile-user {
       display: flex;
       flex-direction: row;
